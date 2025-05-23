@@ -43,7 +43,7 @@
             android:ems="10"
             android:hint="@string/gasolina"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal"
+            android:inputType="number|numberDecimal"
             android:padding="16dp"
             android:textColorHint="#535353"
             android:textSize="20sp" />
@@ -58,7 +58,7 @@
             android:ems="10"
             android:hint="@string/etanol"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal"
+            android:inputType="number|numberDecimal"
             android:padding="16dp"
             android:textColorHint="#535353"
             android:textSize="20sp" />
