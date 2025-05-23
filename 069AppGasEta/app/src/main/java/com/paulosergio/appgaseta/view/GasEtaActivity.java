@@ -14,9 +14,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.paulosergio.appgaseta.R;
 import com.paulosergio.appgaseta.apoio.UtilGasEta;
+import com.paulosergio.appgaseta.controller.CombustivelController;
 import com.paulosergio.appgaseta.model.Combustivel;
 
 public class GasEtaActivity extends AppCompatActivity {
+
+    CombustivelController controller;
 
     Combustivel combustivelGasolina;
     Combustivel combustivelEtanol;
@@ -41,6 +44,8 @@ public class GasEtaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_gaseta);
+
+        controller = new CombustivelController(GasEtaActivity.this);
 
         editGasolina = findViewById(R.id.editGasolina);
         editEtanol = findViewById(R.id.editEtanol);
@@ -104,6 +109,8 @@ public class GasEtaActivity extends AppCompatActivity {
                 editEtanol.setText("");
                 txtResultado.setText(R.string.resultado);
 
+                controller.limpar();
+
                 btnSalvar.setEnabled(false);
             }
         });
@@ -125,6 +132,11 @@ public class GasEtaActivity extends AppCompatActivity {
 
                 combustivelGasolina.setRecomendacao(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
                 combustivelEtanol.setRecomendacao(recomendacao);
+
+                /// O segundo vai sobrescrever o primeiro
+                /// * poderia solucionar utilizando Array *
+                controller.salvar(combustivelGasolina);
+                controller.salvar(combustivelEtanol);
 
             }
         });

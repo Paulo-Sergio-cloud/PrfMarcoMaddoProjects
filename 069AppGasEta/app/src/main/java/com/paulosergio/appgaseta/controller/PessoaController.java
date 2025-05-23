@@ -11,9 +11,9 @@ public class PessoaController {
     SharedPreferences.Editor listaAlunos;
     public static final String NOME_PREFERENCES = "pref_lista_alunos";
 
-    public PessoaController(MainActivity mainActivity){
+    public PessoaController(MainActivity activity){
 
-        preferences = mainActivity.getSharedPreferences(NOME_PREFERENCES, 0);
+        preferences = activity.getSharedPreferences(NOME_PREFERENCES, 0);
         listaAlunos = preferences.edit();
 
     }
