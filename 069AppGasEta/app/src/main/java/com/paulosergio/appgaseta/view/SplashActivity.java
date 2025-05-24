@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.paulosergio.appgaseta.R;
+import com.paulosergio.appgaseta.database.GasEtaDB;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -35,6 +36,8 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+
+                GasEtaDB db = new GasEtaDB(SplashActivity.this);
 
                 Intent telaPrincipal = new Intent(
                         SplashActivity.this,
