@@ -135,8 +135,11 @@ public class GasEtaActivity extends AppCompatActivity {
 
                 /// O segundo vai sobrescrever o primeiro
                 /// * poderia solucionar utilizando Array *
-                controller.salvar(combustivelGasolina);
-                controller.salvar(combustivelEtanol);
+                //controller.salvar(combustivelGasolina);
+                //controller.salvar(combustivelEtanol);
+
+                /// Resolvido o problema da sobrescrição do XML
+                controller.salvar(combustivelGasolina, combustivelEtanol);
 
             }
         });

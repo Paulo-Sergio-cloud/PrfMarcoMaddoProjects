@@ -18,11 +18,18 @@ public class CombustivelController {
 
     }
 
-    public void salvar(Combustivel combustivel){
+    public void salvar(Combustivel combustivel1, Combustivel combustivel2){
 
-        editorPreferences.putString("combustivel", combustivel.getNomeDoCombustivel());
-        editorPreferences.putFloat("precoDoCombustivel", (float) combustivel.getPrecoDoCombustivel());
-        editorPreferences.putString("recomendacao", combustivel.getRecomendacao());
+        /// Resolvido o problema da sobrescrição do XML
+
+        editorPreferences.putString("combustivel1", combustivel1.getNomeDoCombustivel());
+        editorPreferences.putFloat("precoDoCombustivel1", (float) combustivel1.getPrecoDoCombustivel());
+        editorPreferences.putString("recomendacao", combustivel1.getRecomendacao());
+
+        editorPreferences.putString("combustivel2", combustivel2.getNomeDoCombustivel());
+        editorPreferences.putFloat("precoDoCombustivel2", (float) combustivel2.getPrecoDoCombustivel());
+        editorPreferences.putString("recomendacao", combustivel2.getRecomendacao());
+
         editorPreferences.apply();
 
     }
