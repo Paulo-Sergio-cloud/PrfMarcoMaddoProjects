@@ -18,7 +18,6 @@ public class GasEtaDB extends SQLiteOpenHelper {
 
         db = getWritableDatabase();
 
-        String a = "GasEta";
     }
 
     @Override
@@ -31,8 +30,6 @@ public class GasEtaDB extends SQLiteOpenHelper {
                 "nomeDoCombustivel TEXT, " +
                 "precoDoCombustivel REAL, " +
                 "recomendacao TEXT)";
-
-        String b = "onCreate";
 
         db.execSQL(sqlTabelaCombustivel);
 
