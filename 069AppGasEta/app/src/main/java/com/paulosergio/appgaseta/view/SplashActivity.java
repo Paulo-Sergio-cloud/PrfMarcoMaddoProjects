@@ -36,7 +36,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
+                String c = "Splash";
                 GasEtaDB db = new GasEtaDB(SplashActivity.this);
 
                 Intent telaPrincipal = new Intent(
